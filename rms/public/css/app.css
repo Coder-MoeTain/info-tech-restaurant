@@ -1,0 +1,84 @@
+:root {
+  --bg: radial-gradient(circle at 20% 20%, #e0f0ff 0, #d9e3ff 25%, #c7d3f5 50%, #b7c5ec 75%, #a5b4d9 100%);
+  --bg-dark: radial-gradient(circle at 20% 20%, #0f172a 0, #0b1220 50%, #0a0f1b 100%);
+  --text: #0f172a;
+  --text-dark: #e2e8f0;
+  --glass: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --shadow: 0 12px 30px rgba(0,0,0,0.18);
+  --surface: rgba(255, 255, 255, 0.5);
+  --surface-dark: rgba(255, 255, 255, 0.08);
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.12);
+  --radius: 14px;
+  --gap: 12px;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  backdrop-filter: blur(20px);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  font-size: 16px;
+}
+[data-theme="dark"] body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  backdrop-filter: blur(20px);
+}
+.btn {
+  min-height: 44px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+.btn:active { transform: translateY(0); }
+input, textarea, select {
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+}
+input:focus, textarea:focus, select:focus { outline: 2px solid rgba(59,130,246,0.4); }
+
+.card-surface {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+.shadow-soft { box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+
+.tag {
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight:600;
+  font-size:12px;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: var(--gap);
+}
+.panel-pad { padding: 16px; }
+.row-gap { display:flex; gap: var(--gap); flex-wrap:wrap; }
+.hover-card:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.15); transition: all 0.1s ease; }
+
